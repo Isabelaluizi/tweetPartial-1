@@ -13,7 +13,7 @@
 
 Route::get('/', 'TweetController@show');
 Route::post('/', 'TweetController@addTweet');
-
 Route::get('/{tweetId}', 'TweetController@showTweet');
-
 Route::post('/deletePost', 'TweetController@deleteTweet');
+Route::post('/', 'TweetController@selectTweet');
+Route::post('/UpdatePost', 'TweetController@updateTweet');

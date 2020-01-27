@@ -27,6 +27,17 @@ class TweetController extends Controller
         return view("showTweets", [ "allTweets" => $tweets]);
     }
 
+    function selectTweet (Request $request) {
+        $tweets = DB::table("tweet")->where("id","$request->id")->first();
+        return view("showFormUpdate", [ "tweet" => $tweets]);
+    }
+
+    function updateTweet (Request $request) {
+        DB::insert("UPDATE tweet SET author='$request->author', content='$request->content' WHERE id=$request->id");
+        $tweets = DB::table('tweet')->get();
+        return view("showTweets", [ "allTweets" => $tweets]);
+    }
+
     function deleteTweet(Request $request) {
         DB::delete("DELETE FROM tweet WHERE id=$request->id");
         $tweets = DB::table('tweet')->get();

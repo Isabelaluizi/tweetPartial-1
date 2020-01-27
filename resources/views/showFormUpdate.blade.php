@@ -4,6 +4,10 @@ Edit
 @endsection
 @section('content')
 
+@include('header')
+<p> Edit your post: </p>
+
+
 <form action="/UpdatePost" method="post">
     @csrf
     <p>Content:</p>
@@ -13,8 +17,8 @@ Edit
     <button name="id" type="submit" value="{{ $tweet->id }}" >Update Post</button>
 </form>
 
+@include('footer')
 
 
-@include('header')
 
 @endsection

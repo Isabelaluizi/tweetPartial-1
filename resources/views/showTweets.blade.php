@@ -4,6 +4,8 @@ Tweets
 @endsection
 @section('content')
 
+@include('header')
+
 @foreach ($allTweets as $tweet)
     <p>{{ $tweet->content }}</p>
     <p><strong>{{ $tweet->author }}</strong></p>
@@ -17,7 +19,7 @@ Tweets
     </form>
 @endforeach
 
-@include('header')
+
 
 <form action="/" method="post">
     @csrf
@@ -25,4 +27,6 @@ Tweets
     <input type="text" name="content" value='tweet'>
     <input type="submit" value="Create Tweet">
 </form>
+
+@include('footer')
 @endsection

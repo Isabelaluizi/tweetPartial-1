@@ -3,8 +3,8 @@
 Error
 @endsection
 @section('content')
-<p>You Errored Tweets!</p>
 @include('header')
+<p>This Tweet does not exit!</p>
 @endsection
 
 
